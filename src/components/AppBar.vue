@@ -6,6 +6,7 @@
         src="https://q-soft.de/wp-content/uploads/2020/02/Favivon@4x.png"
         alt="Logo"
       />
+      <v-btn icon="mdi-home" @click="useComponentStore().switchComponent('home')"/>
     </template>
 
     <template v-slot:append>
@@ -17,6 +18,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue';
 import { useTheme } from 'vuetify';
+import { useComponentStore } from '../stores/useComponentStore';
 
 const theme = useTheme();
 const themeModes = ref(['light', 'dark', 'system']);
